@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "../../../contexts/AuthContext";
 import { API_ENDPOINTS } from "../../../lib/config";
@@ -52,7 +52,7 @@ interface WeekFormData {
   isActive: boolean;
 }
 
-export default function WeeksPage() {
+function WeeksContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const moduleIdFromUrl = searchParams.get("moduleId");
@@ -738,5 +738,13 @@ export default function WeeksPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function WeeksPage() {
+  return (
+    <Suspense fallback={<div className="flex justify-center items-center min-h-screen"><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500"></div></div>}>
+      <WeeksContent />
+    </Suspense>
   );
 }

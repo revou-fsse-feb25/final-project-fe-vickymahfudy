@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { API_ENDPOINTS } from "@/lib/config";
 import { useAuth } from "../../../contexts/AuthContext";
@@ -40,7 +40,7 @@ interface BatchFormData {
   isActive: boolean;
 }
 
-export default function BatchesPage() {
+function BatchesContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const verticalIdFromUrl = searchParams.get("verticalId");
@@ -658,5 +658,13 @@ export default function BatchesPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function BatchesPage() {
+  return (
+    <Suspense fallback={<div className="flex justify-center items-center min-h-screen"><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500"></div></div>}>
+      <BatchesContent />
+    </Suspense>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "../../../contexts/AuthContext";
 import { API_ENDPOINTS } from "../../../lib/config";
@@ -20,7 +20,7 @@ import {
 } from "../../../types/assignment";
 import AdminNavbar from "../../../components/AdminNavbar";
 
-export default function AssignmentsPage() {
+function AssignmentsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const batchIdFromUrl = searchParams.get("batchId");
@@ -748,5 +748,13 @@ export default function AssignmentsPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function AssignmentsPage() {
+  return (
+    <Suspense fallback={<div className="flex justify-center items-center min-h-screen"><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500"></div></div>}>
+      <AssignmentsContent />
+    </Suspense>
   );
 }

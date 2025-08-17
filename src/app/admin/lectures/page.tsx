@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "../../../contexts/AuthContext";
 import { API_ENDPOINTS } from "../../../lib/config";
@@ -69,7 +69,7 @@ interface LectureFormData {
   isActive: boolean;
 }
 
-export default function LecturesPage() {
+function LecturesContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const weekIdFromUrl = searchParams.get("weekId");
@@ -926,5 +926,13 @@ export default function LecturesPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function LecturesPage() {
+  return (
+    <Suspense fallback={<div className="flex justify-center items-center min-h-screen"><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500"></div></div>}>
+      <LecturesContent />
+    </Suspense>
   );
 }
