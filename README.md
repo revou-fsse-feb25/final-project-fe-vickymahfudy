@@ -6,12 +6,87 @@ A modern Learning Management System (LMS) frontend built with Next.js 15, TypeSc
 
 ## 🚀 Features
 
+### Core Features
+
 - **Role-Based Authentication**: Separate interfaces for administrators and students
 - **Responsive Design**: Mobile-first approach with dark/light theme support
 - **Real-time Notifications**: Toast notifications using Sonner
 - **Modern UI/UX**: Clean, intuitive interface with smooth animations
 - **Type Safety**: Full TypeScript implementation
 - **Performance Optimized**: Built with Next.js 15 and Turbopack
+
+### 👨‍💼 Admin Features
+
+#### Educational Structure Management
+
+- **Vertical Management**: Create and manage educational verticals (e.g., Full Stack Development, Data Science)
+- **Batch Management**: Organize students into cohorts with specific start/end dates
+- **Module Management**: Structure curriculum into logical learning modules
+- **Week Management**: Plan weekly learning schedules and content delivery
+- **Lecture Management**: Schedule and organize lecture sessions with detailed information
+
+#### Assignment
+
+- **Assignment Management**: Edit, update, and organize assignments across modules
+
+### 🎓 Student Features
+
+#### Learning Dashboard
+
+- **Personal Dashboard**: Centralized view of current courses, assignments, and progress
+- **Batch Overview**: Access to batch-specific information and fellow students
+- **Upcoming Deadlines**: Clear visibility of assignment due dates and important events
+
+#### Assignment & Submission System
+
+- **Assignment Access**: View detailed assignment instructions and requirements
+- **Submission History**: Track all submitted assignments with timestamps
+- **Status Tracking**: Monitor submission status (pending, submitted, graded)
+- **Resubmission**: Ability to resubmit assignments when permitted
+
+#### Course Navigation
+
+- **Module Exploration**: Navigate through course modules in structured sequence
+- **Week-by-Week Content**: Access weekly learning materials and objectives
+- **Lecture Access**: View lecture schedules and access recorded sessions
+
+#### Enrollment Management
+
+- **Course Enrollment**: Self-enroll in available courses and batches
+- **Enrollment Status**: Track enrollment status and course access
+- **Batch Information**: View batch details, schedules, and peer information
+
+### 🚀 Future Feature: Team Lead (Assignment Grading)
+
+#### Overview
+
+The Team Lead feature is planned for future implementation to enhance the learning experience by introducing peer-to-peer learning and distributed grading capabilities. This feature will create a hierarchical learning structure where advanced students can assist in the educational process.
+
+#### Scope & Functionality
+
+##### Team Lead Role & Responsibilities
+
+- **Assignment Grading**: Review and grade assignments from junior students
+- **Feedback Provision**: Provide detailed, constructive feedback on submissions
+- **Mentorship**: Guide and support assigned students in their learning journey
+- **Progress Monitoring**: Track and report on mentee progress to administrators
+- **Quality Assurance**: Ensure grading consistency and educational standards
+
+##### Advanced Grading System
+
+- **Rubric-Based Grading**: Structured evaluation criteria for consistent assessment
+- **Peer Review Process**: Multi-level review system with admin oversight
+- **Grade Calibration**: Training and calibration sessions for Team Leads
+- **Appeal Process**: Structured system for grade disputes and reviews
+- **Analytics Dashboard**: Comprehensive grading analytics and performance metrics
+
+##### Team Lead Management
+
+- **Selection Criteria**: Automated and manual selection based on performance metrics
+- **Training Program**: Comprehensive onboarding for new Team Leads
+- **Performance Tracking**: Monitor Team Lead effectiveness and student satisfaction
+- **Rotation System**: Regular rotation to provide opportunities for multiple students
+- **Recognition System**: Badges, certificates, and recognition for outstanding Team Leads
 
 ## 🛠️ Tech Stack
 
