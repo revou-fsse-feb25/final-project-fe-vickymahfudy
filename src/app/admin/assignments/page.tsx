@@ -47,13 +47,17 @@ function AssignmentsContent() {
   });
 
   // Search and filter functionality
-  const { searchTerm, filters, handleSearchChange, handleFilterChange: originalHandleFilterChange } =
-    useSearchFilter({
-      status: "",
-      type: "",
-      batch: "",
-      vertical: "",
-    });
+  const {
+    searchTerm,
+    filters,
+    handleSearchChange,
+    handleFilterChange: originalHandleFilterChange,
+  } = useSearchFilter({
+    status: "",
+    type: "",
+    batch: "",
+    vertical: "",
+  });
 
   // Custom handleFilterChange with dependent dropdown logic
   const handleFilterChange = (filterKey: string, value: string) => {
@@ -68,7 +72,7 @@ function AssignmentsContent() {
     } else if (filterKey === "type") {
       originalHandleFilterChange("status", "");
     }
-    
+
     // Apply the current filter change
     originalHandleFilterChange(filterKey, value);
   };
@@ -84,9 +88,16 @@ function AssignmentsContent() {
     const matchesBatch =
       filters.batch === "" || assignment.batchId === filters.batch;
     const matchesVertical =
-      filters.vertical === "" || assignment.batch?.verticalId === filters.vertical;
+      filters.vertical === "" ||
+      assignment.batch?.verticalId === filters.vertical;
 
-    return matchesSearch && matchesStatus && matchesType && matchesBatch && matchesVertical;
+    return (
+      matchesSearch &&
+      matchesStatus &&
+      matchesType &&
+      matchesBatch &&
+      matchesVertical
+    );
   });
 
   useEffect(() => {
@@ -372,8 +383,10 @@ function AssignmentsContent() {
                 options: [
                   { value: "", label: "All Batches" },
                   ...batches
-                    .filter((batch) => 
-                      filters.vertical === "" || batch.verticalId === filters.vertical
+                    .filter(
+                      (batch) =>
+                        filters.vertical === "" ||
+                        batch.verticalId === filters.vertical
                     )
                     .map((batch) => ({
                       value: batch.id,
@@ -753,7 +766,13 @@ function AssignmentsContent() {
 
 export default function AssignmentsPage() {
   return (
-    <Suspense fallback={<div className="flex justify-center items-center min-h-screen"><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500"></div></div>}>
+    <Suspense
+      fallback={
+        <div className="flex justify-center items-center min-h-screen">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500"></div>
+        </div>
+      }
+    >
       <AssignmentsContent />
     </Suspense>
   );
