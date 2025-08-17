@@ -259,8 +259,8 @@ export default function StudentDashboard() {
         )}
 
         {/* My Enrolled Batches */}
-        {myEnrollments.length > 0 && (
-          <div className="bg-white/70 backdrop-blur-sm dark:bg-gray-800/70 rounded-xl sm:rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8 mb-8 sm:mb-10">
+        <div className="bg-white/70 backdrop-blur-sm dark:bg-gray-800/70 rounded-xl sm:rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8 mb-8 sm:mb-10">
+          {myEnrollments.length > 0 && (
             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8 gap-4">
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
                 My Enrolled Batches
@@ -285,6 +285,8 @@ export default function StudentDashboard() {
                 <span>Enroll in Courses</span>
               </Link>
             </div>
+          )}
+          {myEnrollments.length > 0 && (
             <div className="grid gap-4 sm:gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {filteredEnrollments.map((enrollment) => (
                 <Link
@@ -337,72 +339,72 @@ export default function StudentDashboard() {
                 </Link>
               ))}
             </div>
+          )}
 
-            {/* No Results Found */}
-            {filteredEnrollments.length === 0 &&
-              myEnrollments.filter(
-                (enrollment) => enrollment.status === "APPROVED"
-              ).length > 0 && (
-                <div className="text-center py-8 sm:py-12">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-gradient-to-br from-orange-100 to-red-100 dark:from-orange-900/20 dark:to-red-900/20 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
-                    <Search className="w-8 h-8 sm:w-10 sm:h-10 text-orange-600 dark:text-orange-400" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
-                    No Results Found
-                  </h3>
-                  <p className="text-gray-500 dark:text-gray-400 mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed max-w-md mx-auto">
-                    No enrolled batches match your current filter criteria. Try
-                    adjusting your search or vertical filter.
-                  </p>
-                  <button
-                    onClick={() => {
-                      setSelectedVertical("all");
-                      setSearchQuery("");
-                    }}
-                    className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary-dark text-white text-sm sm:text-base font-semibold rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 cursor-pointer"
-                  >
-                    Clear All Filters
-                  </button>
-                </div>
-              )}
-
-            {/* No Enrolled Batches */}
-            {myEnrollments.filter(
+          {/* No Results Found */}
+          {myEnrollments.length > 0 && filteredEnrollments.length === 0 &&
+            myEnrollments.filter(
               (enrollment) => enrollment.status === "APPROVED"
-            ).length === 0 && (
+            ).length > 0 && (
               <div className="text-center py-8 sm:py-12">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-primary/20 dark:to-secondary/20 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
-                  <svg
-                    className="w-8 h-8 sm:w-10 sm:h-10 text-primary dark:text-primary"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                    />
-                  </svg>
+                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-gradient-to-br from-orange-100 to-red-100 dark:from-orange-900/20 dark:to-red-900/20 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
+                  <Search className="w-8 h-8 sm:w-10 sm:h-10 text-orange-600 dark:text-orange-400" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
-                  No Enrolled Batches
+                  No Results Found
                 </h3>
                 <p className="text-gray-500 dark:text-gray-400 mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed max-w-md mx-auto">
-                  You haven&apos;t enrolled in any batches yet. Browse available
-                  courses to get started with your learning journey.
+                  No enrolled batches match your current filter criteria. Try
+                  adjusting your search or vertical filter.
                 </p>
-                <Link
-                  href="/student/enrollment"
-                  className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary-dark text-white text-sm sm:text-base font-semibold rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 w-full sm:w-auto cursor-pointer"
+                <button
+                  onClick={() => {
+                    setSelectedVertical("all");
+                    setSearchQuery("");
+                  }}
+                  className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary-dark text-white text-sm sm:text-base font-semibold rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 cursor-pointer"
                 >
-                  Browse Available Batches
-                </Link>
+                  Clear All Filters
+                </button>
               </div>
             )}
-          </div>
-        )}
+
+          {/* No Enrolled Batches */}
+          {myEnrollments.filter(
+            (enrollment) => enrollment.status === "APPROVED"
+          ).length === 0 && (
+            <div className="text-center py-8 sm:py-12">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-primary/20 dark:to-secondary/20 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
+                <svg
+                  className="w-8 h-8 sm:w-10 sm:h-10 text-primary dark:text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
+                No Enrolled Batches
+              </h3>
+              <p className="text-gray-500 dark:text-gray-400 mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed max-w-md mx-auto">
+                You haven&apos;t enrolled in any batches yet. Browse available
+                courses to get started with your learning journey.
+              </p>
+              <Link
+                href="/student/enrollment"
+                className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary-dark text-white text-sm sm:text-base font-semibold rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 w-full sm:w-auto cursor-pointer"
+              >
+                Browse Available Batches
+              </Link>
+            </div>
+          )}
+        </div>
       </main>
     </div>
   );
