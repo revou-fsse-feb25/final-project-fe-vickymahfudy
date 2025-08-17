@@ -731,7 +731,7 @@ export default function BatchAssignmentsPage() {
                             className="flex items-center gap-1 flex-1"
                           >
                             <Edit className="h-4 w-4" />
-                            Edit
+                            Re-submit
                           </Button>
                           <Button
                             variant="outline"
