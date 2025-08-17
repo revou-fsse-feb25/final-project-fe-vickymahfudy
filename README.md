@@ -2,7 +2,7 @@
 
 # Revou LMS - Frontend Application
 
-A modern Learning Management System (LMS) frontend built with Next.js 15, TypeScript, and Tailwind CSS. This application provides a comprehensive platform for online learning with role-based access for administrators and students.
+RevoU's Learning Management System (LMS) is a cutting-edge educational platform. This application serves as the central hub for RevoU's intensive tech bootcamp programs, facilitating seamless interaction between students and administrators. With a focus on practical skill development in Full Stack Program, the platform provides comprehensive features for assignment management, progress tracking, and collaborative learning. The system implements role-based access control, allowing administrators to manage educational content and students to engage with course materials effectively, all while maintaining RevoU's high standards for tech education.
 
 ## 🚀 Features
 
