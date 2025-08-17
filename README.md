@@ -6,15 +6,6 @@ RevoU's Learning Management System (LMS) is a cutting-edge educational platform.
 
 ## 🚀 Features
 
-### Core Features
-
-- **Role-Based Authentication**: Separate interfaces for administrators and students
-- **Responsive Design**: Mobile-first approach with dark/light theme support
-- **Real-time Notifications**: Toast notifications using Sonner
-- **Modern UI/UX**: Clean, intuitive interface with smooth animations
-- **Type Safety**: Full TypeScript implementation
-- **Performance Optimized**: Built with Next.js 15 and Turbopack
-
 ### 👨‍💼 Admin Features
 
 #### Educational Structure Management
@@ -147,66 +138,7 @@ src/
     └── assignment.ts      # Assignment-related types
 ```
 
-## 🚦 Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm or yarn
-- Backend API server running (see backend repository)
-
-### Installation
-
-1. **Clone the repository**
-
-   ```bash
-   git clone <repository-url>
-   cd final-project-fe-vickymahfudy
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Environment Configuration**
-
-   Create a `.env.local` file in the root directory:
-
-   ```env
-   NEXT_PUBLIC_API_URL=http://localhost:3001
-   ```
-
-   For production, update the API URL to your backend server URL.
-
-4. **Start the development server**
-
-   ```bash
-   npm run dev
-   ```
-
-   The application will be available at `http://localhost:3002`
-
-## 📜 Available Scripts
-
-| Script          | Description                                          |
-| --------------- | ---------------------------------------------------- |
-| `npm run dev`   | Start development server with Turbopack on port 3002 |
-| `npm run build` | Build the application for production                 |
-| `npm start`     | Start the production server on port 3002             |
-| `npm run lint`  | Run ESLint for code quality checks                   |
-
 ## 🎨 Styling & Design System
-
-### Tailwind CSS Configuration
-
-The project uses Tailwind CSS 4 with a custom design system:
-
-- **Dark Mode**: Class-based dark mode support
-- **Custom Colors**: Brand-specific color palette
-- **Typography**: Geist font family integration
-- **Responsive Design**: Mobile-first breakpoints
 
 ### Color Palette
 
@@ -223,13 +155,6 @@ The project uses Tailwind CSS 4 with a custom design system:
 --error: #ef4444
 --info: #3b82f6
 ```
-
-### Component Patterns
-
-- **Consistent Spacing**: Using Tailwind's spacing scale
-- **Hover Effects**: Smooth transitions and interactive states
-- **Glass Morphism**: Backdrop blur effects for modern UI
-- **Gradient Accents**: Brand gradient applications
 
 ## 🔐 Authentication & State Management
 
@@ -279,13 +204,6 @@ Centralized endpoint management in `src/lib/config.ts`:
 - **Typed Endpoints**: TypeScript interfaces for all API responses
 - **Error Handling**: Consistent error handling across all services
 
-### Key API Services
-
-- **AuthService**: Authentication and user management
-- **AssignmentService**: Assignment CRUD operations
-- **SubmissionService**: Student submission handling
-- **EnrollmentService**: Course enrollment management
-
 ## 🧩 Key Components
 
 ### Navigation Components
@@ -320,6 +238,83 @@ Centralized endpoint management in `src/lib/config.ts`:
 - **Touch-friendly**: Appropriate touch targets
 - **Performance**: Optimized images and lazy loading
 - **Navigation**: Mobile-specific navigation patterns
+
+## 🖥️ Apps Sneak Peek
+
+### Landing Page
+<img width="1685" height="1055" alt="Screenshot 2025-08-17 at 22 08 21" src="https://github.com/user-attachments/assets/e102b720-ac32-413b-8992-7c66c48f0053" />
+
+### Login and Sign Up Page
+<img width="1698" height="1058" alt="Screenshot 2025-08-17 at 22 09 12" src="https://github.com/user-attachments/assets/1f6ac9fc-116b-4145-92cd-9f9d381538da" />
+<img width="1698" height="1053" alt="Screenshot 2025-08-17 at 22 09 53" src="https://github.com/user-attachments/assets/8607f3ca-40dd-4294-8830-db3f658184ab" />
+
+### Admin Dashboard
+<img width="1691" height="1063" alt="Screenshot 2025-08-17 at 22 10 36" src="https://github.com/user-attachments/assets/ab23e9e3-ce1e-4a7a-ab3d-38140ce15b11" />
+
+### Admin Course Management
+<img width="1692" height="1068" alt="Screenshot 2025-08-17 at 22 11 20" src="https://github.com/user-attachments/assets/5bc1a9f1-68fb-47df-b608-ae32bf5943db" />
+
+### Content Management Form
+<img width="1697" height="1062" alt="Screenshot 2025-08-17 at 22 11 52" src="https://github.com/user-attachments/assets/1306cca5-7d8c-49bb-8c4d-c545310d09b5" />
+
+### Student Welcome Page
+<img width="1706" height="1066" alt="Screenshot 2025-08-17 at 22 13 43" src="https://github.com/user-attachments/assets/107fd129-7a05-49a7-970b-7be41ccca969" />
+
+### Student Enrollment Page
+<img width="1696" height="1066" alt="Screenshot 2025-08-17 at 22 13 18" src="https://github.com/user-attachments/assets/7dad3c22-3098-4e02-a130-3e8666d86e2f" />
+
+### Student Batch Content Page
+<img width="1693" height="1068" alt="Screenshot 2025-08-17 at 22 14 14" src="https://github.com/user-attachments/assets/bc174abb-2f83-4d93-bfe9-7975727d11f2" />
+
+### Student Module Content Page
+<img width="1699" height="1064" alt="Screenshot 2025-08-17 at 22 15 02" src="https://github.com/user-attachments/assets/81090eff-5e9f-4054-aa77-be36a7719653" />
+
+### Student Assignment Management Page
+<img width="1710" height="1069" alt="Screenshot 2025-08-17 at 22 17 38" src="https://github.com/user-attachments/assets/c7077a49-a7ec-4e7d-b924-056468c544ab" />
+
+### Assignment Submission Form
+<img width="1709" height="1067" alt="Screenshot 2025-08-17 at 22 16 48" src="https://github.com/user-attachments/assets/6e076b2e-68dc-4298-9760-b20424959351" />
+
+## 🚦 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+- Backend API server running (see backend repository)
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <repository-url>
+   cd final-project-fe-vickymahfudy
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Environment Configuration**
+
+   Create a `.env.local` file in the root directory:
+
+   ```env
+   NEXT_PUBLIC_API_URL=http://localhost:3001
+   ```
+
+   For production, update the API URL to your backend server URL.
+
+4. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+   The application will be available at `http://localhost:3002`
 
 ## 🚀 Deployment
 
@@ -359,40 +354,6 @@ NEXT_PUBLIC_API_URL=https://your-backend-api.com
    - **Start Command**: `npm start`
    - **Node Version**: 18+
 
-### Alternative Deployment Platforms
-
-The application is also optimized for deployment on:
-
-- **Vercel** (Recommended for Next.js)
-- **Netlify**
-- **AWS Amplify**
-- **Docker** (with provided configuration)
-
-## 🔧 Development Guidelines
-
-### Code Style
-
-- **TypeScript**: Strict type checking enabled
-- **ESLint**: Next.js recommended configuration
-- **Prettier**: Code formatting (if configured)
-- **Component Naming**: PascalCase for components, camelCase for functions
-
-### Best Practices
-
-1. **Component Structure**: Keep components focused and reusable
-2. **Type Safety**: Define interfaces for all data structures
-3. **Error Handling**: Implement proper error boundaries and user feedback
-4. **Performance**: Use React.memo and useMemo for optimization
-5. **Accessibility**: Follow WCAG guidelines for inclusive design
-
-### Adding New Features
-
-1. **Create Types**: Define TypeScript interfaces in `src/types/`
-2. **Build Services**: Add API service classes in `src/lib/`
-3. **Implement Components**: Create reusable components in `src/components/`
-4. **Add Pages**: Use Next.js App Router in `src/app/`
-5. **Update Configuration**: Add new endpoints to `src/lib/config.ts`
-
 ## 🤝 Contributing
 
 1. **Fork the repository**
@@ -401,27 +362,9 @@ The application is also optimized for deployment on:
 4. **Push to branch**: `git push origin feature/new-feature`
 5. **Submit a Pull Request**
 
-### Commit Convention
-
-- `feat:` New features
-- `fix:` Bug fixes
-- `docs:` Documentation updates
-- `style:` Code style changes
-- `refactor:` Code refactoring
-- `test:` Test additions or updates
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🆘 Support
-
-For support and questions:
-
-1. **Check Documentation**: Review this README and inline code comments
-2. **Search Issues**: Look for existing GitHub issues
-3. **Create Issue**: Submit a new issue with detailed description
-4. **Contact Team**: Reach out to the development team
 
 ---
 
