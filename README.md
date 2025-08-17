@@ -1,3 +1,5 @@
+[![✨ Experience the Live Apps ✨](https://img.shields.io/badge/✨_Click_Here-To_The_Live_Apps!-4c51bf?style=for-the-badge&logo=vercel)](https://final-project-fe-vickymahfudy-production.up.railway.app/)
+
 # Revou LMS - Frontend Application
 
 A modern Learning Management System (LMS) frontend built with Next.js 15, TypeScript, and Tailwind CSS. This application provides a comprehensive platform for online learning with role-based access for administrators and students.
@@ -14,6 +16,7 @@ A modern Learning Management System (LMS) frontend built with Next.js 15, TypeSc
 ## 🛠️ Tech Stack
 
 ### Core Technologies
+
 - **Framework**: Next.js 15.4.6 with App Router
 - **Language**: TypeScript 5
 - **Styling**: Tailwind CSS 4 with custom design system
@@ -24,6 +27,7 @@ A modern Learning Management System (LMS) frontend built with Next.js 15, TypeSc
 - **Fonts**: Geist Sans & Geist Mono
 
 ### Development Tools
+
 - **Build Tool**: Turbopack (Next.js)
 - **Linting**: ESLint with Next.js configuration
 - **Package Manager**: npm
@@ -72,33 +76,37 @@ src/
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 - Backend API server running (see backend repository)
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd final-project-fe-vickymahfudy
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Environment Configuration**
-   
+
    Create a `.env.local` file in the root directory:
+
    ```env
    NEXT_PUBLIC_API_URL=http://localhost:3001
    ```
-   
+
    For production, update the API URL to your backend server URL.
 
 4. **Start the development server**
+
    ```bash
    npm run dev
    ```
@@ -107,12 +115,12 @@ src/
 
 ## 📜 Available Scripts
 
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start development server with Turbopack on port 3002 |
-| `npm run build` | Build the application for production |
-| `npm start` | Start the production server on port 3002 |
-| `npm run lint` | Run ESLint for code quality checks |
+| Script          | Description                                          |
+| --------------- | ---------------------------------------------------- |
+| `npm run dev`   | Start development server with Turbopack on port 3002 |
+| `npm run build` | Build the application for production                 |
+| `npm start`     | Start the production server on port 3002             |
+| `npm run lint`  | Run ESLint for code quality checks                   |
 
 ## 🎨 Styling & Design System
 
@@ -240,14 +248,19 @@ Centralized endpoint management in `src/lib/config.ts`:
 
 ## 🚀 Deployment
 
+### Live Application
+
+The application is deployed on **Railway**, a modern deployment platform that provides seamless CI/CD integration with GitHub.
+
 ### Production Build
 
 1. **Build the application**
+
    ```bash
    npm run build
    ```
 
-2. **Start production server**
+2. **Start the production server**
    ```bash
    npm start
    ```
@@ -260,12 +273,22 @@ For production deployment, ensure the following environment variables are set:
 NEXT_PUBLIC_API_URL=https://your-backend-api.com
 ```
 
-### Deployment Platforms
+### Railway Deployment (Current Platform)
 
-The application is optimized for deployment on:
+1. **Connect Repository**: Link your GitHub repository to Railway
+2. **Environment Variables**: Set `NEXT_PUBLIC_API_URL` in Railway dashboard
+3. **Automatic Deployment**: Railway automatically builds and deploys on every push to main branch
+4. **Custom Domain**: Railway provides automatic HTTPS and custom domain support
+5. **Build Configuration**:
+   - **Build Command**: `npm run build`
+   - **Start Command**: `npm start`
+   - **Node Version**: 18+
+
+### Alternative Deployment Platforms
+
+The application is also optimized for deployment on:
 
 - **Vercel** (Recommended for Next.js)
-- **Railway**
 - **Netlify**
 - **AWS Amplify**
 - **Docker** (with provided configuration)
